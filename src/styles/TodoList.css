@@ -1,21 +1,33 @@
+body {
+  background-color: rgb(58, 58, 58);
+}
+
+#app {
+  margin-top: 70px;
+}
+
 .center{
     text-align: center;
+    color: rgb(22, 22, 22);
+    margin-bottom: 20px;
+    
   }
   .page{
-    border: 1px solid lightgrey; 
+    border: 1px solid rgb(24, 24, 24); 
     margin: auto;
-    box-shadow: 1px 1px 3px 1px lightgrey;
+    box-shadow: 1px 1px 3px 1px rgb(17, 17, 17);
+    background-color: rgb(34, 34, 34);
   }
   .main{
-    width: 500px;
+    width: 600px;
   }
   .second{
-    width: 496px;
-    height: 5px;
+    width: 599px;
+    height: 6px;
   }
   .third{
-    width: 492px;
-    height: 5px;
+    width: 599px;
+    height: 6px;
   }
   .delete{
     float: right;
@@ -26,9 +38,15 @@
   }
   .inputTask{
     border: none;
-    width: 498px;
+    width: 598px;
     height: 50px;
     padding-left: 20px;
+    outline: none;
+  }
+  .lead {
+    color: rgb(173, 173, 173);
+    background-color: rgb(43, 43, 43);
+    border: 1px solid rgb(34, 34, 34); 
   }
   .containerCounter{
     padding-top: 10px;
@@ -36,4 +54,12 @@
   .counter{
     margin-left: 10px;
     color: grey;
+  }
+  .btn{
+    background-color: rgb(20, 20, 20);
+    color: rgb(170, 170, 170);
+  }
+  .btn:hover {
+    background-color: rgb(26, 26, 26);
+    color: rgb(184, 184, 184);
   }
