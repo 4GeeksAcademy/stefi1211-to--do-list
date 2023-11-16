@@ -1,21 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/TodoList.css';
 import InputTask from './component/InputTask.js';
 import Task from './component/Task.js';
+
 
 function TodoList() {
   const [tasks, setTasks] = useState([]);
   const [counter, setCounter] = useState(0);
 
+  useEffect(() => {
+    fetch('https://playground.4geeks.com/apis/fake/todos/user/stefi1211')
+      .then((response) => response.json())
+      .then((data) => {
+        setTasks(data);
+        setCounter(data.length);
+      })
+      .catch((error) => console.error('Error fetching data:', error));
+  }, []);
+
   const updateList = (newList) => {
     setTasks(newList);
     setCounter(newList.length);
+
+    
+    syncWithAPI(newList);
   };
 
   const deleteAll = () => {
     setTasks([]);
     setCounter(0);
+
+
+    syncWithAPI([]);
   };
+
+  const syncWithAPI = (newList) => {
+    fetch('https://playground.4geeks.com/apis/fake/todos/user/stefi1211', {
+      method: 'PUT',
+      body: JSON.stringify(newList),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => console.log('Data synchronized with API:', data))
+      .catch((error) => console.error('Error syncing with API:', error));
+  };
+
+
 
   return (
     <div className="App">
