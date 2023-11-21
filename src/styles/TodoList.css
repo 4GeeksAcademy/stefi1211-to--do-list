@@ -32,6 +32,7 @@ body {
   .delete{
     float: right;
     display: none;
+    margin-left: 10px;
   }
   li:hover .delete{
     display: inline-block;
@@ -62,4 +63,16 @@ body {
   .btn:hover {
     background-color: rgb(26, 26, 26);
     color: rgb(184, 184, 184);
+  }
+
+  .list-group-item.done {
+    text-decoration: line-through;
+  }
+
+  .check {
+    float: right;
+    display: none; 
+  }
+  li:hover .check{
+    display: inline-block;
   }
